@@ -1,31 +1,22 @@
 "use client";
 import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Environment, PresentationControls } from "@react-three/drei";
+import { Center, Environment, PresentationControls } from "@react-three/drei";
+import { Van } from '@/components/Van'
 
 const FiberContainer = () => {
   return (
-    <div className="w-1/2">
+    <div className="flex-grow">
       <Canvas className="">
         <PresentationControls>
-          <Model />
+
+          <Van />
+
         </PresentationControls>
-        <Environment preset="city" />
+        <Environment preset="forest" />
       </Canvas>
     </div>
   );
 };
-const Model = () => {
-  const torusRef = useRef<any>(null);
-  useFrame(() => {
-    if (!torusRef.current) return;
-    torusRef.current.rotation.y += 0.01;
-  });
-  return (
-    <mesh ref={torusRef}>
-      <torusKnotGeometry />
-      <meshStandardMaterial />
-    </mesh>
-  );
-};
+
 export default FiberContainer;
