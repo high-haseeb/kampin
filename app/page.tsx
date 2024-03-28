@@ -1,3 +1,4 @@
+import ConfigurationTab from "@/components/ConfigurationTab";
 import FiberContainer from "@/components/FiberContainer";
 import Logo from "@/components/Logo";
 import ProgressBar from "@/components/ProgressBar";
@@ -9,7 +10,7 @@ export default function Home() {
       <Logo/>
       <div className="flex flex-grow w-screen">
         <FiberContainer/>
-        <ProductConfig />
+        <ConfigurationTab/>
       </div>
       <ProgressBar />
     </main>

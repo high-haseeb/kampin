@@ -9,9 +9,7 @@ const FiberContainer = () => {
     <div className="flex-grow">
       <Canvas className="">
         <PresentationControls>
-
           <Van />
-
         </PresentationControls>
         <Environment preset="forest" />
       </Canvas>
