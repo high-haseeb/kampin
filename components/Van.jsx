@@ -1,14 +1,9 @@
 import React, { useRef } from "react";
 import { useGLTF, Center } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
 
 export function Van(props) {
   const { nodes, materials } = useGLTF("/models/Van and house.gltf");
   const modelRef = useRef(null);
-  useFrame(() => {
-    if (!modelRef.current) return;
-    modelRef.current.rotation.y += 0.004;
-  });
   return (
     <Center ref={modelRef}>
       <group {...props} dispose={null} scale={6}>
